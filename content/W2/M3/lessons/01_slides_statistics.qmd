@@ -70,8 +70,8 @@ Can you distinguish them the following tabl e?
 
 **Descriptive Statistics** (إحصاء وصفي) summarizes qualities of a group (of people or things):
 
-1. Using a **Statistic / Parameter** (إحصاءة) (mean, median, variance, range, ..etc.)  
-2. Using a **Graph / Plot** (رسم بياني) (points, lines, colors, size, text, ..etc.)  
+1. **Statistic / Parameter** (إحصاءة) (mean, median, variance, range, ..etc.)  
+2. **Graph / Plot** (رسم بياني) (points, lines, colors, size, text, ..etc.)  
 
 In both cases, we are interested in **multipe** statistics and **multiple** graphs, before we move on to making conclusions.
 

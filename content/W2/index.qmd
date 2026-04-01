@@ -121,7 +121,7 @@ Learning outcomes:
 
 Lessons and labs:
 
-1. [Python Visualization Tools](./M3/lessons/02_viz_tools.ipynb)
+1. [Python Visualization Tools](./M3/lessons/02_data_viz.ipynb)
 2. [Visualizing distributions of data](./M3/lessons/03_displot.ipynb)
 3. [Visualizing categorical data](./M3/lessons/04_catplot.ipynb)
 4. [Visualizing statistical relationships](./M3/lessons/05_relplot.ipynb)
