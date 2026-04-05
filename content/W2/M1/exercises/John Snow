@@ -4,10 +4,15 @@ The map showed a high concentration of deaths near the Broad Street pump. Howeve
 
 A1: 
 Historical records show that John Snow used multiple forms of evidence to move from correlation to causation. 
-- He collected detailed data on cholera deaths by visiting affected households and mapping each case geographically. 
-- ⁠This revealed a concentration of deaths around the Broad Street pump. 
-- ⁠He then examined anomalies, such as individuals who lived far from the pump but consumed its water and became ill, as well as those who lived nearby but did not use the pump and remained healthy. 
+
+- He collected detailed data on cholera deaths by visiting affected households and mapping each case geographically.
+
+- ⁠This revealed a concentration of deaths around the Broad Street pump.
+
+- ⁠He then examined anomalies, such as individuals who lived far from the pump but consumed its water and became ill, as well as those who lived nearby but did not use the pump and remained healthy.
+
 - ⁠Additionally, Snow compared different water sources in London and found differences in cholera rates. 
+
 - Finally, when the pump handle was removed, the number of new cases declined. 
 
 These combined observations supported the conclusion that contaminated water from the pump was the cause of the outbreak.
@@ -17,6 +22,22 @@ These combined observations supported the conclusion that contaminated water fro
 
 Question 2: The Danger of Missing Data
 Imagine if Snow had only collected data from the local hospitals, rather than walking the streets and knocking on doors. How would this have changed his dataset, and how might it have altered his conclusions?
+
+A2: 
+1- Sampling Bias
+Only severe cases would be recorded, excluding mild or unreported cases.
+
+2- Loss of Geographic Insight
+He would not have been able to map deaths accurately or identify the cluster around the pump.
+
+3- Missed Patterns
+Important exceptions (such as people far away getting sick) would likely be overlooked.
+
+4- Potentially Wrong Conclusions
+Without full data, he might have supported the dominant belief that cholera was caused by bad air.
+
+
+
 
 Question 3: The “Miasma” of Today
 The “miasma theory” was a widely accepted consensus that was fundamentally incorrect but seemed to explain the surface-level facts (Soho smelled bad, and people in Soho were dying). What is a modern example of a “miasma”—a widely accepted assumption in business, society, or science that might fall apart if rigorously tested with data?
