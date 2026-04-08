@@ -165,7 +165,6 @@ Learning outcomes:
 
 Lessons:
 
-- [Lesson: Hypothesis Testing](./M4/lessons/01_slides_hypothesis_testing.qmd)
 - [Lab: Hypothesis Testing](./M4/lessons/01_hypothesis_testing.ipynb)
 
 
