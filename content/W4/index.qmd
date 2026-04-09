@@ -3,8 +3,12 @@ format: html
 toc-depth: 2
 ---
 
-- [Machine learning apps (Gradio)](https://huggingface.co/docs/transformers/pipeline_gradio)
-- [Web server inference](https://huggingface.co/docs/transformers/pipeline_webserver)
+1. [Introduction to LLM-based NLP and HuggingFace](./M1/slides/01_Introduction_to_LLM-based_NLP.qmd)
+  - [Quick Tour](https://huggingface.co/docs/transformers/quicktour)
+2. [Transformer Pipelines](./M1/slides/02_pipelines.qmd)
+3. [User Interface (Gradio)](https://huggingface.co/docs/transformers/pipeline_gradio)
+4. 
+
 - [Prompt engineering](https://huggingface.co/docs/transformers/tasks/prompting)
 - [Text generation](https://huggingface.co/docs/transformers/llm_tutorial)
 - [Tokenizers](https://huggingface.co/docs/transformers/fast_tokenizers)
@@ -31,8 +35,6 @@ toc-depth: 2
   - the viewer and how to use it
   - how to convert to DataFrame
 
-- **Sharing demos** with [Gradio](https://www.gradio.app/guides/quickstart)
-
 - **Docker** (required by LabelStudio and UnslothStudio)
 
 - **Data Curation** with [LabelStudio](https://labelstud.io/guide) (alternative: [Argilla](https://huggingface.co/learn/llm-course/chapter10/1))
@@ -43,7 +45,6 @@ toc-depth: 2
     - HF → LS: Load datasets from Hugging Face into Label Studio for annotation
     - LS → HF: Export labeled data from Label Studio for model training
     - HF → LS: Connect Hugging Face models as ML backends for pre-annotations and active learning
-
 
 References:
 
