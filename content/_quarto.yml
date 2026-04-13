@@ -47,9 +47,15 @@ format:
     toc-title: "Contents"
     anchor-sections: true
     html-math-method: katex
+    mermaid-format: png
     
   revealjs:
     theme: [default, assets/sdaia.scss, custom.scss]
+    
+    mermaid:
+      theme: default
+    mermaid-format: png
+
     slide-number: c/t
     show-slide-number: all
     transition: slide

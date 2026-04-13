@@ -194,27 +194,40 @@ This produces artificially high scores. It is mathematically dishonest to evalua
 
 ## Data Leakage Visualized
 
+::: {.columns}
+::: {.column}
 ```{mermaid}
 %% |fig-align: center
-flowchart TD
+flowchart LR
     subgraph WRONG [Data Leakage!]
         A1[Entire Dataset] --> B1[Fit Scaler on ALL data]
         B1 --> C1[Split Data]
-        C1 --> D1[Train Data contains Test metadata]
+        C1 --> D1["Train Data (contains leaked information from test data)"]
         C1 --> E1[Test Data]
     end
-    
+
+    style WRONG stroke:#f66,stroke-width:2px
+```
+:::
+::: {.column}
+```{mermaid}
+%% |fig-align: center
+flowchart LR
     subgraph RIGHT [Proper Process]
         A2[Entire Dataset] --> B2[Split Data FIRST]
         B2 --> C2[Train Data]
         B2 --> D2[Test Data]
         C2 --> E2[Fit Scaler on Train ONLY]
         E2 --> F2[Transform Test Data]
+        D2 --> F2
     end
     
-    style WRONG stroke:#f66,stroke-width:2px
+    
     style RIGHT stroke:#6f6,stroke-width:2px
 ```
+:::
+:::
+<!-- end columns -->
 
 :::: {.notes}
 The pipeline is exactly what forces us into the 'RIGHT' box continuously.
@@ -284,7 +297,7 @@ All of scikit-learn is architected identically to this pipeline schema.
 
 Transformers may add or remove columns, but they do not add or remove rows. Examples:
 
-| **Transformer** | **Learning: `fit`** | **Transform: `transform`** |
+| **Transformer** | **Estimating: `fit()`** | **Transforming: `transform()`** |
 | :--- | :--- | :--- |
 | [`SimpleImputer`](https://scikit-learn.org/stable/modules/generated/sklearn.impute.SimpleImputer.html) | Computes the mean. | Fills missing values with the mean. |
 | [`StandardScaler`](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html) | Computes mean and standard deviation. | Scales data to zero mean and unit variance. |
