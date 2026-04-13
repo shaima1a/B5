@@ -52,10 +52,14 @@ Learning outcomes:
 - [Slides: Linear Models](M1/lessons/02_slides_linear_models.qmd)
 - [[Lab: Linear Models]](M1/lessons/03_lab_linear_models.ipynb)
 
-**Exercises:**
+**Resources**:
 
-- [M1.Ex1](M1/exercises/ex1_reg.ipynb)
-- [M1.Ex2](M1/exercises/ex2_reg.ipynb)
+- [https://scikit-learn.org/](https://scikit-learn.org/)
+
+#### Exercises
+
+- [M1.Ex1: Model Hours vs Marks](M1/exercises/ex1_reg.ipynb)
+- [M1.Ex2: Model Experience vs Salary](M1/exercises/ex2_reg.ipynb)
 
 ### M1-3: Non-linear Patterns
 
@@ -72,10 +76,10 @@ Learning outcomes:
 - [Slides: Non-linear patterns](M1/lessons/04_slides_non_linear_patterns.qmd)
 - [Lab: Non-linear patterns](M1/lessons/05_lab_non_linear_patterns.ipynb)
 
-**Exercises:**
+#### Exercises
 
-- [M1.Ex3](M1/exercises/ex3_class.ipynb)
-- [M1.Ex4](M1/exercises/ex4_non-linear.ipynb)
+- [M1.Ex3: Iris Classification](M1/exercises/ex3_class.ipynb)
+- [M1.Ex4: Modeling Non-linear Patterns](M1/exercises/ex4_non-linear.ipynb)
 
 ## Module 2: Predictive Modeling Pipelines
 
@@ -119,7 +123,7 @@ Learning outcomes:
 
 **Materials:**
 
-1. [[Slides]](M2/lessons/03_slides_pipeline.qmd)
+1. [Slides: Pipeline](M2/lessons/03_slides_pipeline.qmd)
      - [[Lab 1.A: Handle Missing Values]](M2/lessons/lab_impute.ipynb)
      - [[Lab 1.B: Scaling: Numerical Features]](M2/lessons/lab_scale.ipynb)
      - [[Lab 1.C: Encoding: Cateogrical Features]](M2/lessons/lab_encode.ipynb)
