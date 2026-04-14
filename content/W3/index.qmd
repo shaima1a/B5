@@ -124,18 +124,20 @@ Learning outcomes:
 **Materials:**
 
 1. [Slides: Pipelines](M2/lessons/03_slides_pipeline.qmd)
-     - [[Lab 1.A: Handle Missing Values]](M2/lessons/lab_impute.ipynb)
-     - [[Lab 1.B: Scaling: Numerical Features]](M2/lessons/lab_scale.ipynb)
-     - [[Lab 1.C: Encoding: Cateogrical Features]](M2/lessons/lab_encode.ipynb)
-2. [[Lab 2: Pipelines]](M2/lessons/04_lab_pipeline.ipynb)
+     - [Lab: Handle Missing Values](M2/lessons/lab_impute.ipynb)
+     - [Lab: Scaling: Numerical Features](M2/lessons/lab_scale.ipynb)
+     - [Lab: Encoding: Cateogrical Features](M2/lessons/lab_encode.ipynb)
+2. [Lab: Pipelines](M2/lessons/04_lab_pipeline.ipynb)
 
-**Exercises**:
+#### Exercises
 
-1. [[Effect of rescaling on a k-neighbors models]](M2/exercises/01_scaling_knn.ipynb)
-2. [[Categorical feature encoding]](M2/exercises/02_categorical_encoding_ex.ipynb)
-3. [[High-cardinality categorical features]](M2/exercises/05_high-cardinality.ipynb)
-4. [M2.Ex1: Advertising Revenue](M2/exercises/ex1_multi-reg.ipynb.ipynb)
-5. [M2.Ex2: Fuel Efficiency](M2/exercises/ex2_multi-reg.ipynb.ipynb)
+1. [M2.Ex1: Advertising Revenue](M2/exercises/ex1_multi-reg.ipynb.ipynb)
+2. [M2.Ex2: Fuel Efficiency](M2/exercises/ex2_multi-reg.ipynb.ipynb)
+
+**Bonus**:
+
+1. [Effect of rescaling on a k-neighbors models](M2/exercises/01_scaling_knn.ipynb)
+2. [High-cardinality categorical features](M2/exercises/02_high-cardinality.ipynb)
 
 ## Module 3: Model Selection and Evaluation
 
@@ -154,8 +156,8 @@ Learning outcomes:
 
 **Materials:**
 
-1. [[Slides]](M3/lessons/01_slides_evaluation.qmd)
-2. [[Lab]](M3/lessons/02_lab_generalization.ipynb)
+1. [Slides](M3/lessons/01_slides_evaluation.qmd)
+2. [Lab](M3/lessons/02_lab_generalization.ipynb)
 
 ### M3-2: Hyper-parameter Tuning
 
@@ -171,9 +173,9 @@ Learning outcomes:
 
 **Materials:**
 
-1. [[Lab 1]](M3/lessons/03_hyper-parameter_tuning.ipynb)
-3. [[Lab 2]](M3/lessons/04_sample_grouping.ipynb)
-4. [[Text]](M3/texts/text_controlling_randomness.qmd)
+1. [Lab 1](M3/lessons/03_hyper-parameter_tuning.ipynb)
+3. [Lab 2](M3/lessons/04_sample_grouping.ipynb)
+4. [Text](M3/texts/text_controlling_randomness.qmd)
 
 ## Module 4: Regression and Classification Metrics
 
@@ -188,8 +190,13 @@ Learning outcomes:
 
 **Materials:**
 
-- [[Slides]](M4/lessons/01_slides_regression_metrics.qmd)
-- [[Lab]](M4/lessons/02_lab_regression_metrics.ipynb)
+- [Slides](M4/lessons/01_slides_regression_metrics.qmd)
+- [Lab](M4/lessons/02_lab_regression_metrics.ipynb)
+
+#### Exercises
+
+- [M4.Ex1: Housing Prices Model (PyCaret)](M4/exercises/ex1_pycaret_regression.ipynb)
+
 
 ### M4-2: Classification Metrics
 
@@ -220,6 +227,10 @@ Learning outcomes:
 
 - [[Lab 1]](M4/lessons/06_lab_classifier_threshold_tuning.ipynb)
 - [[Lab 2]](M4/lessons/07_lab_probability_calibration.ipynb)
+
+#### Exercises
+
+- [M4.Ex2: Penguins Classification (PyCaret)](M4/exercises/ex2_pycaret_classification.ipynb)
 
 ## Module 5: Decision Trees and Ensembles
 
