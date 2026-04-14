@@ -50,7 +50,7 @@ Learning outcomes:
 **Materials:**
 
 - [Slides: Linear Models](M1/lessons/02_slides_linear_models.qmd)
-- [[Lab: Linear Models]](M1/lessons/03_lab_linear_models.ipynb)
+- [Lab: Linear Models](M1/lessons/03_lab_linear_models.ipynb)
 
 **Resources**:
 
@@ -82,26 +82,6 @@ Learning outcomes:
 - [M1.Ex4: Modeling Non-linear Patterns](M1/exercises/ex4_non-linear.ipynb)
 
 ## Module 2: Predictive Modeling Pipelines
-
-### M2-1: Data Profiling and Privacy
-
-Learning outcomes:
-
-1. Define *data quality profiling* and why it matters
-2. Explain how profiling differs by *data type* (tabular, time-series, text, ...)
-3. Describe how to handle *large datasets* (e.g., sampling)
-4. Use *dataset comparison* to track quality across versions
-5. Understand *data quality alerts* and turn them into next actions
-6. Understand why **Data Privacy** matters
-6. Given a dataset, indentify fields that count as PII directly and indirectly
-7. Given a dataset, apply techniques to protect sensitive data
-
-**Materials**:
-
-1. [Slides 1](M2/lessons/01_slides_data_quality_profiling.qmd)
-2. [Slides 2](M2/lessons/02_slides_sensitive_data.qmd)
-
-### M2-2: Pipelines
 
 Goal: Build a Pipeline to handle preprocessing of both categorical and numerical features.
 
@@ -280,6 +260,23 @@ Learning outcomes:
 
 - [[Lab]](M5/lessons/06_lab_shap.ipynb)
 
+### M5-4: Data Profiling and Privacy
+
+Learning outcomes:
+
+1. Define *data quality profiling* and why it matters
+2. Explain how profiling differs by *data type* (tabular, time-series, text, ...)
+3. Describe how to handle *large datasets* (e.g., sampling)
+4. Use *dataset comparison* to track quality across versions
+5. Understand *data quality alerts* and turn them into next actions
+6. Understand why **Data Privacy** matters
+6. Given a dataset, indentify fields that count as PII directly and indirectly
+7. Given a dataset, apply techniques to protect sensitive data
+
+**Materials**:
+
+1. [Slides 1](M2/lessons/07_slides_data_quality_profiling.qmd)
+2. [Slides 2](M2/lessons/08_slides_sensitive_data.qmd)
 
 ## Project
 
