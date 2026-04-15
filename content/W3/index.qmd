@@ -19,6 +19,8 @@ By the end of this course, you should be able to:
 
 ### M1-1: Introduction to ML
 
+::: {.columns}
+::: {.column}
 Learning outcomes:
 
 1. Define *Machine Learning* and understand its utility
@@ -27,11 +29,19 @@ Learning outcomes:
 1. Distinguish *Features* from *Target*
 1. Recognize foundations and related fields
 1. Recognize the three main topics of ML
+:::
+::: {.column}
+**Materials:**
 
-**Materials:** [[Slides]](M1/lessons/01_slides_Intro_ML.qmd)
+- [Slides: Introduction](M1/lessons/01_slides_Intro_ML.qmd)
+:::
+:::
+<!-- end columns -->
 
 ### M1-2: Linear Models
 
+::: {.columns}
+::: {.column}
 Learning outcomes:
 
 1. Given a DataFrame, split the feature columns from the target columns
@@ -46,7 +56,8 @@ Learning outcomes:
 1. Explain what the `stratify=target` parameter does
 1. Train a classifier (`LogisticRegression`) model
 1. Given a `DecisionBoundaryDisplay` distinguish between a classifier's `predict` and `predict_proba` methods
-
+:::
+::: {.column}
 **Materials:**
 
 - [Slides: Linear Models](M1/lessons/02_slides_linear_models.qmd)
@@ -60,9 +71,14 @@ Learning outcomes:
 
 - [M1.Ex1: Model Hours vs Marks](M1/exercises/ex1_reg.ipynb)
 - [M1.Ex2: Model Experience vs Salary](M1/exercises/ex2_reg.ipynb)
+:::
+:::
+<!-- end columns -->
 
 ### M1-3: Non-linear Patterns
 
+::: {.columns}
+::: {.column}
 Learning outcomes:
 
 1. Distinguish between linear and non-linear relationships.
@@ -70,7 +86,8 @@ Learning outcomes:
 1. Fit non-linear patterns using linear models with `PolynomialFeatures`.
 1. Fit non-linear patterns using linear models with `SplineTransformer`.
 1. Recognize Decision Trees and Support Vector Machines as non-linear models.
-
+:::
+::: {.column}
 **Materials:**
 
 - [Slides: Non-linear patterns](M1/lessons/04_slides_non_linear_patterns.qmd)
@@ -80,11 +97,16 @@ Learning outcomes:
 
 - [M1.Ex3: Iris Classification](M1/exercises/ex3_class.ipynb)
 - [M1.Ex4: Modeling Non-linear Patterns](M1/exercises/ex4_non-linear.ipynb)
+:::
+:::
+<!-- end columns -->
 
 ## Module 2: Predictive Modeling Pipelines
 
 Goal: Build a Pipeline to handle preprocessing of both categorical and numerical features.
 
+::: {.columns}
+::: {.column}
 Learning outcomes:
 
 1. Identify causes of missing data
@@ -100,7 +122,8 @@ Learning outcomes:
 11. List steps to avoid data leakage
 12. Distinguish between `fit`, `predict`, and `transform` methods
 13. Put together pieces of the `Pipeline` using objects like `ColumnTransformer`
-
+:::
+::: {.column}
 **Materials:**
 
 1. [Slides: Pipelines](M2/lessons/03_slides_pipeline.qmd)
@@ -111,35 +134,52 @@ Learning outcomes:
 
 #### Exercises
 
-1. [M2.Ex1: Advertising Revenue](M2/exercises/ex1_multi-reg.ipynb.ipynb)
-2. [M2.Ex2: Fuel Efficiency](M2/exercises/ex2_multi-reg.ipynb.ipynb)
+1. [M2.Ex1: Advertising Revenue](M2/exercises/ex1_multi-reg.ipynb)
+2. [M2.Ex2: Fuel Efficiency](M2/exercises/ex2_multi-reg.ipynb)
 
 **Bonus**:
 
 1. [Effect of rescaling on a k-neighbors models](M2/exercises/01_scaling_knn.ipynb)
 2. [High-cardinality categorical features](M2/exercises/02_high-cardinality.ipynb)
+:::
+:::
+<!-- end columns -->
 
 ## Module 3: Model Selection and Evaluation
 
 ### M3-1: Evaluation Metrics
 
+::: {.columns}
+::: {.column}
+
 Learning outcomes:
 
-1. Distinguish between loss function and evaluation metric
-2. List 3 Regression Metrics and 3 Classification Metrics
-3. Given a model, verify it is actually learning from the data
-4. Explain why more data might not add any information to the model
-5. Suggest ways in which data would actually add information to the model
-6. Measure the scalability of the model
-7. Explain the utility of a validation split
-8. Tell whether a model is under-fitting or over-fitting; and explain why
+In this lecture we learn to:
 
+1. Distinguish *loss functions* from *evaluation metrics*
+2. List 3 Regression Metrics and 3 Classification Metrics
+3. Establish a *baseline* for learning
+4. Measure the *scalability* of the model
+5. Explain why more data might not add any information to the model and suggest solution
+6. Detect *over-fitting* and *under-fitting* by estimating *generalization* performance
+7. Understand and use *cross-validation* properly
+8. Explain the utility of the *train/validation/test* splits
+
+:::
+::: {.column}
 **Materials:**
 
-1. [Slides](M3/lessons/01_slides_evaluation.qmd)
-2. [Lab](M3/lessons/02_lab_generalization.ipynb)
+1. [Slides: Model Evaluation](M3/lessons/01_slides_evaluation.qmd)
+2. [Lab: Under-fitting and Over-fitting](M3/lessons/02_lab_generalization.ipynb)
+
+:::
+:::
+<!-- end columns -->
 
 ### M3-2: Hyper-parameter Tuning
+
+::: {.columns}
+::: {.column}
 
 Learning outcomes:
 
@@ -149,34 +189,50 @@ Learning outcomes:
 4. Explain the difference between Grid Search and either Random Search or Bayesian Search
 5. Recognize the more efficient, model-specific cross-validations
 6. Explain the problem of data dependency and why sample grouping solves it
-7. Distinguish different cases to use `random_state` correctly to control randomness
 
+:::
+::: {.column}
 **Materials:**
 
-1. [Lab 1](M3/lessons/03_hyper-parameter_tuning.ipynb)
-3. [Lab 2](M3/lessons/04_sample_grouping.ipynb)
-4. [Text](M3/texts/text_controlling_randomness.qmd)
+- [Lab: Hyper-parameter Tuning](M3/lessons/03_hyper-parameter_tuning.ipynb)
+- [Lab: Sample Grouping](M3/lessons/04_sample_grouping.ipynb)
+
+**Extra:**
+
+- [Text: Controlling Randomness](M3/texts/text_controlling_randomness.qmd)  
+    Distinguish different cases to use `random_state` correctly to control randomness
+
+:::
+:::
+<!-- end columns -->
 
 ## Module 4: Regression and Classification Metrics
 
 ### M4-1: Regression Metrics
 
+::: {.columns}
+::: {.column}
 Learning outcomes:
 
 1. Explain why regression models need dedicated evaluation metrics.
-2. Interpret and compare MSE, ($R^2$), MAE, median AE, and MAPE.
-3. Diagnose regression models visually using prediction and residual plots.
-4. Explain when a target transformation can improve model fit and metrics.
+2. Interpret and compare *MSE*, ($R^2$), *MAE*, *median AE*, and *MAPE*.
+3. Diagnose regression models visually using *prediction* and *residual plots*.
+4. Explain when a *target transformation* can improve model fit and metrics.
 
+:::
+::: {.column}
 **Materials:**
 
-- [Slides](M4/lessons/01_slides_regression_metrics.qmd)
-- [Lab](M4/lessons/02_lab_regression_metrics.ipynb)
+- [Slides: Regression Metrics](M4/lessons/01_slides_regression_metrics.qmd)
+- [Lab: Evaluation of Regression Models](M4/lessons/02_lab_regression_metrics.ipynb)
 
 #### Exercises
 
 - [M4.Ex1: Housing Prices Model (PyCaret)](M4/exercises/ex1_pycaret_regression.ipynb)
 
+:::
+:::
+<!-- end columns -->
 
 ### M4-2: Classification Metrics
 
@@ -275,8 +331,8 @@ Learning outcomes:
 
 **Materials**:
 
-1. [Slides 1](M2/lessons/07_slides_data_quality_profiling.qmd)
-2. [Slides 2](M2/lessons/08_slides_sensitive_data.qmd)
+1. [Slides 1](M5/lessons/07_slides_data_quality_profiling.qmd)
+2. [Slides 2](M5/lessons/08_slides_sensitive_data.qmd)
 
 ## Project
 

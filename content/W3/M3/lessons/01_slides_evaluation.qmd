@@ -11,7 +11,7 @@ format:
 In this lecture we learn to:
 
 1. Distinguish **loss functions** (training objective) from **evaluation metrics** (business/practical score)
-2. Verify that a model is **learning** by beating simple baselines
+2. Establish a baseline for **learning**
 3. Understand when **more data** helps (and when it does not)
 4. Detect **over-fitting vs under-fitting** and reason about **generalization**
 5. Estimate generalization with proper **train/validation/test splits** and **cross-validation**
@@ -25,16 +25,16 @@ Frame the lecture as a toolkit for evaluation: (1) what we optimize vs what we m
 ## Loss Function vs Evaluation Metric
 
 - **Loss** (lower is better):
-  - internal objective minimized during training
+  - **Internal objective minimized during training**
   - examples:
     - MSE for `LinearRegression`
     - Log Loss for `LogisticRegression`
     - Entropy for `DecisionTreeClassifier`
 - **Metrics**:
-  - used to evaluate performance after training
+  - **A quantity to evaluate the performance** (usually after training)
   - used to compare models from a practical/business perspective
   - examples:
-    - Regression: `R^2`, MSE, MAPE
+    - Regression: $R^2$, MSE, MAPE
     - Classification: Accuracy, Precision, Recall
 
 :::: {.notes}
@@ -56,12 +56,13 @@ Use this as a rule of thumb: unless gradients exist (differentiability), trainin
 
 ---
 
-## How to verify the model is learning
+## How to verify the model is learning?
 
 - Core sanity check:
   - the model should be **better than a guess**
   - and certainly better than **random predictions**
 - If it is not, common causes include:
+  - wrong model
   - unhelpful features
   - wrong hyperparameters
   - class imbalance issues
@@ -80,8 +81,7 @@ Deliver the mindset: if evaluation isn’t better than chance, don’t jump stra
 - `most_frequent`: always predicts the most frequent training label
 - `stratified`: random predictions respecting the class distribution
 
-Key point:
-- in all cases, `predict()` **ignores input features**
+Key point: in all cases, `predict()` **ignores input features**
 
 :::: {.notes}
 Reinforce why baselines matter: they represent the performance you get without learning from the input. Your real model should beat them; otherwise, something is wrong (features, targets, or evaluation setup).
@@ -136,6 +136,8 @@ More data helps **only if**:
 2. **The model is capable**: the learning algorithm can represent the real pattern
 3. **Data quality matters**: avoid “garbage in - garbage out”
 
+Our goal is new information, not just more data points.
+
 :::: {.notes}
 Set expectations: collecting more data is an investment, not a guarantee. Performance improves only when at least one of these conditions is the limiting factor.
 ::::
@@ -144,15 +146,16 @@ Set expectations: collecting more data is an investment, not a guarantee. Perfor
 
 ## More data works when it fills gaps
 
-:::: {.columns}
-:::: {.column width="40%"}
-- Adding data in regions you already understand (“tails”) may not improve much
-- You get the biggest benefit when new data covers **missing/uncertain regions**
-::::
-:::: {.column width="60%"}
-![Figure: blue is real, orange is model, points are data.](../assets/adding_wrong_data_points.png)
-::::
-::::
+Figure below shows:
+
+- Real curve (Blue)
+- Model curve (Orange)
+- Data points come from the real curve with a bit of **noise**
+
+![](../assets/adding_wrong_data_points.png){fig-align="center" .r-stretch}
+
+- Adding data in regions the model already learned won't be much of a gain
+- You get the biggest benefit when new data covers **missing regions**
 
 :::: {.notes}
 Interpretation: the model’s weak generalization comes from regions it rarely sees during training (the “uncertain” middle). Adding points to the already-covered tails mostly reinforces what the model already assumes.
@@ -162,17 +165,16 @@ Interpretation: the model’s weak generalization comes from regions it rarely s
 
 ## More data may fail if the model is too inflexible
 
-:::: {.columns}
-:::: {.column width="40%"}
-- If your model class cannot represent the pattern:
-  - adding more samples will not fix the mismatch
-- Example idea:
-  - trying to model a nonlinear curve with a straight-line model
-::::
-:::: {.column width="60%"}
-![Figure: blue is model, points are data.](../assets/inflexible_model.png)
-::::
-::::
+Figure below shows:
+
+- Model (sky blue)
+- Left: points coming from a real, hidden curve
+- Right: more points
+
+![](../assets/inflexible_model.png){fig-align="center" .r-stretch}
+
+- Model is **inflexible** to new knowledge. Adding more samples won't inform a simplistic model.
+- Here: we're trying to model a nonlinear curve (complex) with a straight-line model (simple)
 
 :::: {.notes}
 Reinforce: if the model family cannot represent the true pattern, collecting more samples just makes the wrong bias more “confident.” The fix is to increase model capacity or add better features.
@@ -379,7 +381,7 @@ Delivery angle: start with the default `k`-fold because it balances computation 
 
 - In time-series, order matters
 - Use strategies that preserve order:
-  - `TimeSeriesSplit`
+  - [`TimeSeriesSplit`](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html)
 - Often after model selection:
   - train on the full dataset (including the test period)
   - but do not perform further test-based decisions after that
