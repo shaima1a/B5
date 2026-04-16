@@ -1,71 +1,32 @@
 ---
-format: html
-toc-depth: 2
+title: "Index"
+format: 
+  html:
+    page-layout: full
+    toc: false
 ---
 
-- [Machine learning apps (Gradio)](https://huggingface.co/docs/transformers/pipeline_gradio)
-- [Web server inference](https://huggingface.co/docs/transformers/pipeline_webserver)
-- [Prompt engineering](https://huggingface.co/docs/transformers/tasks/prompting)
-- [Text generation](https://huggingface.co/docs/transformers/llm_tutorial)
-- [Tokenizers](https://huggingface.co/docs/transformers/fast_tokenizers)
-- [Fine-tuning](https://huggingface.co/docs/transformers/training)
+| Day | Description | Materials | Assignment |
+| --- | ----------- | --------- | ---------- |
+|  1  | **Overview**<br/>Introduction: LangChain, LangGraph, LangSmith. | [[Lesson](./M1/00_intro.qmd)]<br/>[[Case Studies](./M1/case-studies.qmd)] | [[Assignment 1](./M1/assignment/01_case_studies_ex.qmd)] |
+|     | **Agents**<br/>Models, Messages, Prompts, Structured Output, Tools, and Internet Search. | [[Notebook](./M1/01_agents.ipynb)] | [[Assignment 2](./M1/assignment/02_create_agent.qmd)] |
+|     | **Sub Agents**<br/> Build a personal assistant with agents as tools. | [[Notebook](./M1/02_subagents.ipynb)] | [[Assignment 3](./M1/assignment/03_subagents.qmd)] |
+|  2  | **RAG Overview**<br/>Building a knowledge base. Retrieval pipeline and building blocks. RAG Architectures. | [[Lesson](./M1/03_retrieval.qmd)] |  |
+|     | **Embeddings**<br/>What are embeddings and how do they compare similarity? | [[Notebook](./M1/04_embeddings.ipynb)] |  |
+|     | **Semantic Search**<br/>Indexing and retrival of documents based on meaning. | [[Notebook](./M1/05_semantic_search.ipynb)] | [[Assignment 4](./M1/assignment/04_semantic_search.qmd)] |
+|     | **RAG Chain and RAG Agent**<br/>Answer questions based on specific sources of information. | [[Notebook](./M1/06_RAG_agent.ipynb)] | [[Assignment 5](./M1/assignment/05_rag_agent.qmd)] |
+|  3  | **Context and State**<br/>Short-term, long-term memory and context. | [[Notebook](./M1/07_context_and_state.ipynb)] |  |
+|     | **Customer Support Agent**<br/>Apply the State Machine pattern to resolve customer issues and escalate to humans when necessary. | [[Notebook](./M1/08_customer_support_agent.ipynb)] |  |
+|  4  | **Thinking in LangGraph**<br/> | [[Lesson](./M1/09_langgraph.qmd)] |  |
+|     | **Workflow Patterns**<br/> | [[Notebook](./M1/10_workflows.ipynb)] |  |
+|     | **LangSmith**<br/> | [[Lesson](./M1/11_langsmith.qmd)] |  |
 
 
+## [Need Help?](https://docs.langchain.com/oss/python/langchain/get-help)
 
+[Ask LangChain docs AI](https://chat.langchain.com/) or 
 
+Get help from fellow developers and the LangChain team through our active community channels.
 
-
-
-- **Semantic Search**
-  - **Use Cases???**
-  - Building Applications: [BERTopic](https://maartengr.github.io/BERTopic/index.html)
-  - Selecting and Fine-tuning Models:
-    - [SentenceTransformers: State-of-the-Art Text Embeddings](https://github.com/huggingface/sentence-transformers)
-     - [Three (3) Model Types](https://www.sbert.net/#what-next)
-    - [Fine-tune Embedding Models](https://unsloth.ai/docs/basics/embedding-finetuning)
-     - Example: [EmbeddingGemma (300M) with Sentence Transformers](https://colab.research.google.com/github/unslothai/notebooks/blob/main/nb/EmbeddingGemma_(300M).ipynb)
-
-- **LLMs**
-- [Datasets](https://huggingface.co/docs/hub/en/datasets-overview)
-  - how to get splits
-  - the viewer and how to use it
-  - how to convert to DataFrame
-
-- **Sharing demos** with [Gradio](https://www.gradio.app/guides/quickstart)
-
-- **Docker** (required by LabelStudio and UnslothStudio)
-
-- **Data Curation** with [LabelStudio](https://labelstud.io/guide) (alternative: [Argilla](https://huggingface.co/learn/llm-course/chapter10/1))
-  1. First impression: [Template Gallery](https://labelstud.io/templates/)
-  2. Setup: [Getting Started With Label Studio: A Step-By-Step Guide](https://labelstud.io/learn/getting-started-with-label-studio/) -- REQUIRES DOCKER
-  3. [Introduction to Machine Learning with Label Studio](https://labelstud.io/blog/introduction-to-machine-learning-with-label-studio/)
-  4. [How to Connect Hugging Face with Label Studio SDK](https://labelstud.io/tutorials/how_to_connect_hugging_face_with_label_studio_sdk)
-    - HF → LS: Load datasets from Hugging Face into Label Studio for annotation
-    - LS → HF: Export labeled data from Label Studio for model training
-    - HF → LS: Connect Hugging Face models as ML backends for pre-annotations and active learning
-
-
-References:
-
-- [Official 🤗 Transformers Notebooks](https://huggingface.co/docs/transformers/notebooks)
-- [Official 🦥 Unsloth Notebooks](https://unsloth.ai/docs/get-started/unsloth-notebooks)
-- [Unsloth Studio](https://github.com/unslothai/unsloth): Run and train AI models with a unified local interface.
-
-Easy Computer Vision:
-
-- [Ultralytics Website](https://www.ultralytics.com/)
-- [Ultralytics Platform](https://platform.ultralytics.com/): Train, Deploy, and Scale Ultralytics YOLO Models
-
-
-
-
-
-## Framework Guide
-
-Use `transformers` (HuggingFace): as the foundational, standard library for loading, training, and running models. You can boost fine-tuning speed and efficiency by using [`unsloth`](https://github.com/unslothai/unsloth). Both HuggingFace and Unsloth support deployment and inference.
-
-Use [`sentence_transformers`](https://www.sbert.net/) specifically for state-of-the-art **embedding** and **reranker** models; used for semantic search, clustering, and classification.
-
-Use [LabelStudio](https://labelstud.io/guide) (or [Argilla](https://huggingface.co/learn/llm-course/chapter10/1)) to curate data for training and fine-tuning.
-
-Use `langchain`: to develop applications **powered by** language models.
+- [Community Forum](https://forum.langchain.com/): Ask questions, share solutions, and discuss best practices
+- [Community Slack](https://www.langchain.com/join-community): Connect with other builders and get quick help

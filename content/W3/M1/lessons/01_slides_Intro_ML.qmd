@@ -40,8 +40,6 @@ First: how do we define machine learning?
 So learning is: better performance on tasks, as measured by P, as we get more experience E.
 :::
 
----
-
 ## Data
 
 
@@ -59,8 +57,6 @@ So the subject is data: either predicting Y from X, or discovering structure in 
 There are three classic types of Iris Flowers:
 
 ![Iris Flowers](../assets/iris_flowers.png)
-
-. . .
 
 ## The data matrix
 
@@ -172,7 +168,10 @@ We need ML in two kinds of situations.
 So: hard-to-specify tasks and the need for adaptation are where ML shines.
 :::
 
----
+## Theoretical foundations
+
+![Related fields](../assets/related_fields.png)
+
 
 ## Relation to other fields
 
@@ -188,7 +187,6 @@ How does ML relate to other disciplines?
   - ML emphasizes **predictive performance** and **scalability**
 - **Deep Learning:** A **branch** of ML — multi-layer neural networks that learn **hierarchical features** from huge amounts of low-signal raw data automatically.
 
----
 
 ## Theoretical foundations
 
@@ -211,9 +209,6 @@ ML is applied algorithms and data structures, built on maths and statistics.
 :::
 
 
-## Theoretical foundations
-
-![Related fields](../assets/related_fields.png)
 
 
 ## History
@@ -235,7 +230,6 @@ ML was not invented by one person; it emerged over decades.
 So: philosophy and Turing, then rule-based AI, then data-driven "classic ML", then rise of big data and scalable algorithms, then deep learning, and now foundation models and AI everywhere.
 :::
 
----
 
 ## Names
 
@@ -254,7 +248,6 @@ What do we call this field?
 Different names reflect slightly different emphases; the core is the same.
 :::
 
----
 
 ## Topics: The learning signal
 
@@ -276,7 +269,6 @@ Three main branches, by **source of the learning signal**:
 
 ![Learning signal](../assets/learning_signal.png){width="75%"}
 
----
 
 ## Supervised learning
 
@@ -302,7 +294,6 @@ Examples:
 
 ![Supervised](../assets/01_supervised.png){width="45%"}
 
----
 
 ## Unsupervised learning
 
@@ -328,7 +319,6 @@ Examples:
 
 ![Unsupervised](../assets/02_unsupervised.png){width="45%"}
 
----
 
 ## Reinforcement learning
 
@@ -354,7 +344,6 @@ Examples:
 
 ![Reinforcement](../assets/03_reinforcement.png){width="45%"}
 
----
 
 ## All three together
 
