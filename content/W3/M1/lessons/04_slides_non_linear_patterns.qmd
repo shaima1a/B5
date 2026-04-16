@@ -25,28 +25,76 @@ In this lecture we learn to:
 The theme: even when the data shows curved patterns, we can still leverage linear models by engineering non-linear features, and we can also turn to inherently non-linear models.
 ::::
 
----
+
+# Non-linaer relationships
+
+- A **non-linear relationship** occurs when the change in the dependent variable ($y$) is not strictly proportional (directly or inversely) to the change in the independent variable ($x$).
+- Graphically, this forms a curve rather than a straight line.
+- In a linear relationship, the derivative (the slope) is constant. In a non-linear relationship, the slope changes at every point.
+  - **Linear Equation:** $y = mx + b$ (constant slope $m$).
+  - **Non-linear Equation:** May include exponents, logarithms, or trigonometric functions, such as:
+      - Quadratic: $y = ax^2 + bx + c$
+      - Exponential: $y = ab^x$
+
+
+## 1. Linear: Game Time vs Points Scored
+
+One example of this might be minutes played in a basketball game vs. total points scored:
+
+![](../assets/non-linear/01_linear.png){fig-align="center" .r-stretch}
+
+
+## 2. Quadratic
+
+This typically forms a **U-shape** or inverted U-shape. A common example is **weekly work hours vs. productivity**: productivity increases up to a certain point, then drops due to fatigue.
+
+![](../assets/non-linear/02_quadratic.png){fig-align="center" .r-stretch}
+
+Other examples:
+
+- **Kinetic Energy:** Energy scales with the square of the velocity ($E = \frac{1}{2}mv^2$).
+- **Square Area:** Area scales quadratically ($A = s^2$).
+- **Circle Area:** Follows a quadratic relation ($A = \pi r^2$).
+
+## 3. Cubic
+
+Characterized by an **S-shape** with two distinct inflection curves. This pattern frequently appears in:
+
+![](../assets/non-linear/03_cubic.png){fig-align="center" .r-stretch}
+
+Examples:
+
+- **Balloon Volume:** The relationship between a sphere's volume and its radius is cubic ($V = \frac{4}{3}\pi r^3$).
+- **Thermodynamics:** Commonly maps physical variables within this field.
+
+
+## 4. Exponential
+
+Here, the dependent variable grows at an accelerating rate. Clear examples include **population growth** or the **rapid burst of bamboo growth** following an initial slow phase.
+
+![](../assets/non-linear/04_exponential.png){fig-align="center" .r-stretch}
+
+
+## 5. Logarithmic
+
+This features rapid initial growth that heavily slows over time or with increased inputs, illustrating the principle of **diminishing returns**.
+
+![](../assets/non-linear/05_logarithmic.png){fig-align="center" .r-stretch}
+
+- Example: In physics, the human ear's response to sound intensity is logarithmic. Doubling the acoustic energy only produces a slight perceived increase in volume, rather than feeling twice as loud.
+
 
 ## A synthetic non-linear dataset
 
+:::: {.columns}
+
+::: {.column width="60%"}
 - We generate a **1D input feature** and a **non-linear target**:
   - Target is roughly a **cubic polynomial** in the input.
   - We add some **random noise** to make it realistic.
 - We store the data in a pandas DataFrame with:
   - `input_feature`
   - `target`
-
-:::: {.notes}
-This controlled setup lets us know the ground-truth relationship (cubic) while still having randomness. It’s ideal for illustrating underfitting and improved models.
-::::
-
----
-
-## Visualizing the non-linear pattern
-
-:::: {.columns}
-
-::: {.column width="60%"}
 - Scatter plot of `input_feature` vs `target` shows:
   - A **curved** trend, not a straight line.
   - Local regions where the slope changes sign.
@@ -59,10 +107,11 @@ This controlled setup lets us know the ground-truth relationship (cubic) while s
 ::::
 
 :::: {.notes}
+This controlled setup lets us know the ground-truth relationship (cubic) while still having randomness. It’s ideal for illustrating underfitting and improved models.
+
 Encourage students to inspect the shape: a straight line will clearly miss some structure. This motivates feature engineering or non-linear models.
 ::::
 
----
 
 ## Plain LinearRegression underfits
 
@@ -85,47 +134,19 @@ Encourage students to inspect the shape: a straight line will clearly miss some 
 Connect to the notion of **underfitting**: the model is too simple to capture the structure, even with perfect training. More data alone won’t fix a fundamentally mismatched model.
 ::::
 
----
 
-## Strategy 1: Non-linear models
+## Non-linear feature engineering
 
-:::: {.columns}
-
-::: {.column width="60%"}
-- One solution is to use **non-linear estimators** directly:
-  - **Decision Trees**
-  - **Random Forests**
-  - **Support Vector Machines (SVMs)** with non-linear kernels
-- These models can represent **curved decision boundaries** or non-linear regression functions.
-:::
-
-::: {.column width="40%"}
-![](../assets/non_linear_decision_tree.png)
-:::
-
-::::
-
-:::: {.notes}
-At this stage, keep the description high-level. The key idea is that some models are non-linear “by design” and can adapt flexibly to complex patterns.
-::::
-
----
-
-## Strategy 2: Non-linear feature engineering
-
-- Another strategy: **keep the linear model**, but **transform the features**.
-- We create new features from the original input, e.g.:
-  - Powers: \( x^2, x^3, \dots \)
-  - Piecewise basis functions (splines).
-- Then we fit a **linear model** on these **engineered features**.
+- Another strategy: **keep the model linear**, but **transform the features**.
+  - `PolynomialFeatures(degree=3)`: $( x^1, x^2, x^3, \dots )$
+  - `SplineTransformer(n_knots=5)`: split into ranges and create separate regressions
 
 :::: {.notes}
 Emphasize that a linear model on non-linear features can approximate curved functions. The model is still linear in the **parameters**, but non-linear in the **original input**.
 ::::
 
----
 
-## PolynomialFeatures + LinearRegression
+## PolynomialFeatures
 
 - We use `PolynomialFeatures` to build powers of the input:
 
@@ -146,7 +167,6 @@ reg.fit(X_poly, target)
 Connect degree 3 explicitly to the underlying cubic relationship in the synthetic data. Point out that higher degrees give more flexibility but increase the risk of overfitting.
 ::::
 
----
 
 ## Visual effect of polynomial features
 
@@ -172,7 +192,6 @@ Connect degree 3 explicitly to the underlying cubic relationship in the syntheti
 Use side-by-side plots (or a sweep over degrees) to visually show underfitting vs overfitting. Reinforce the bias–variance trade-off.
 ::::
 
----
 
 ## Splines: localized flexibility
 
@@ -210,7 +229,6 @@ model.fit(data, target)
 Explain that splines give more local control than a single global polynomial. We can capture curves that bend differently in different parts of the input range.
 ::::
 
----
 
 ## Comparing polynomial and spline approaches
 
@@ -235,33 +253,34 @@ Explain that splines give more local control than a single global polynomial. We
 Encourage students to see both as feature engineering tools. Choice depends on problem, data range, and how much local flexibility is needed.
 ::::
 
----
+## Strategy 2: Non-linear models
 
-## Other non-linear models (overview)
+:::: {.columns}
 
-- **Decision Trees:**
-  - Split the feature space into regions with simple predictions.
-  - Naturally non-linear and easy to visualize.
-- **Random Forests / Gradient Boosting:**
-  - Ensembles of trees for stronger performance.
-- **Support Vector Machines (SVMs):**
-  - With non-linear kernels (e.g. RBF), can learn complex boundaries.
+::: {.column width="60%"}
+- One solution is to use **non-linear estimators** directly. Things like: Decision Trees, Random Forests, SVMs
+- Decision Tree Regressors automatically split features and averages it's y values at that range
+:::
 
-:::: {.notes}
-This slide is a preview, not a deep dive. The goal is to position non-linear feature engineering alongside inherently non-linear estimators in the ML toolbox.
+::: {.column width="40%"}
+![](../assets/non_linear_decision_tree.png)
+:::
+
 ::::
 
----
+:::: {.notes}
+At this stage, keep the description high-level. The key idea is that some models are non-linear “by design” and can adapt flexibly to complex patterns.
+::::
+
 
 ## Take-home messages
 
 - Not all data is **linearly** related; curved patterns are common.
 - We can address non-linearity in two main ways:
-  - Use **non-linear models** (trees, SVMs, etc.).
-  - Use **non-linear feature engineering** (polynomials, splines) with linear models.
-- `PolynomialFeatures` and `SplineTransformer`:
-  - Expand a single input into richer feature sets.
-  - Let linear regression approximate complex functions.
+  - Use **non-linear models** (e.g., Decision Tree).
+  - Use **non-linear feature engineering** (polynomials or splines) with linear models:
+    - `PolynomialFeatures`: `degree`
+    - `SplineTransformer`: `knots` and `degree`
 
 :::: {.notes}
 Close by tying back to linear models as a flexible building block: combined with the right features, they can handle surprisingly rich patterns while remaining relatively simple.

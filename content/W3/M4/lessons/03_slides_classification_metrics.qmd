@@ -25,10 +25,8 @@ Focus on the mindset: metrics are the bridge between model predictions and the r
 
 - If you can measure it, you can improve it.
 - Metrics help capture a business goal into a quantitative target.
-- Metrics quantify the “gap” between:
-  - a guessing model
-  - a perfect model
-  - progress over time
+- Quantify progress over time:  
+    baseline vs current vs perfect model.
 - Different metrics imply different trade-offs, so they encode what you value.
 
 ---
@@ -38,7 +36,7 @@ Focus on the mindset: metrics are the bridge between model predictions and the r
 - **Accuracy** is the fraction of correct predictions.
 - Accuracy can look good even when the model fails at the rare class.
 
-![Figure: Imbalance](../assets/classification_metrics_target_countplot.png)
+![](../assets/classification_metrics_target_countplot.png){fig-align="center" .r-stretch}
 
 ::::: {.notes}
 Use accuracy as a sanity check, not as the only decision rule.
@@ -56,67 +54,62 @@ Let's compare against a `DummyClassifier`:
 
 Is accuracy a good metric for imbalanced data? No.
 
+## Predicted vs Actual Classes
 
-## Point Metrics: Confusion Matrix
-
-:::: {.columns}
-:::: {.column width="40%"}
-Confusion matrices organize predictions into error types:
-
-- **False Positives (FP):** Predicted positive, actually negative 
-- **False Negatives (FN):** Predicted negative, actually positive  
+![](../assets/classification_table.png){fig-align="center" .r-stretch}
 
 All possible outcomes:
 
-- `TP` (True Positives)
-- `TN` (True Negatives)
-- `FP` (False Positives)
-- `FN` (False Negatives)
-::::
+- **Correct**:
+  - **TP**: True Positives
+  - **TN**: True Negatives
+- **Incorrect**:
+  - **FP**: False Positives
+  - **FN**: False Negatives
 
-:::: {.column width="60%"}
-![Figure: Confusion Matrix](../assets/classification_metrics_confusion_matrix_logistic.png)
-::::
-::::
+## Point Metrics: Confusion Matrix
+
+**Confusion Matrix** where only the diagonals are **Correct** (TP and TN).
+
+![](../assets/classification_metrics_confusion_matrix_logistic.png){fig-align="center" .r-stretch}
 
 ---
-
-## Point Metrics Summary
-
-Common metrics derived from `TP`, `TN`, `FP`, `FN`:
-
-- **Accuracy:** `(TP + TN) / (TP + TN + FP + FN)`
-- **Precision:** `TP / (TP + FP)`  
-  Precision answers: “Of the predicted positives, how many were correct?”
-- **Recall (Sensitivity):** `TP / (TP + FN)`  
-  Recall answers: “Of the actual positives, how many did we find?”
-- **Specificity:** `TN / (TN + FP)`
-- **F1 score:** `2TP / (2TP + FP + FN)` (hybrid when you need both)
-
-::::: {.notes}
-Precision-recall trade-off is not an accident; it is controlled by the decision rule (threshold).
-::::
 
 ## Confusion Matrix: Dummy Classifiers
 
-![](../assets/classification_metrics_confusion_matrix_dummies.png)
+![](../assets/classification_metrics_confusion_matrix_dummies.png){fig-align="center" .r-stretch}
 
 ---
 
-## Thresholding after: Probability and Distance
+## Point Metrics
 
-A binary classifier produces a continuous value first, and `predict()` turns that number into a class using a threshold:
+- **Accuracy** is the proportion of all classifications that were correct, whether positive or negative:
+    $$\frac{TP + TN}{\text{TP + TN + FP + FN}}$$  
 
-1. `predict_proba()` thresholds a **Probability**:
-   - positive if `P(positive) > 0.5`
-2. `decision_function()` thresholds a **Distance** from the boundary:
-   - positive if `score > 0.0`
+. . . 
 
-So `predict()` is the final “gate” that decides what errors you make.
+However, when the dataset is **imbalanced** or where one kind of mistake (FN or FP) is **more costly** than the other (which is the case in most real-world applications) it's better to optimize for one of the other metrics instead.
 
-[Demo: Classifier Threshold effect on point and summary metrics](./widget_threshold.qmd).
+. . .
 
----
+::: {.columns}
+::: {.column}
+**Precision** is the proportion of all the model's positive classifications that are actually positive:
+    $$\frac{TP}{TP + FP}$$  
+:::
+::: {.column}
+**Recall** is the proportion of all actual positives that were classified correctly as positives:
+    $$\text{Recall} = \frac{TP}{TP + FN}$$
+:::
+:::
+<!-- end columns -->
+
+. . .
+
+Precision and recall often show an inverse relationship:
+
+- Precision improves as false positives decrease
+- Recall improves when false negatives decrease
 
 ## Probability Near the Decision Boundary
 
@@ -146,6 +139,39 @@ So `predict()` is the final “gate” that decides what errors you make.
 :::: {.column width="60%"}
 ![](../../M1/assets/lab_logistic_decision_boundary.png)
 ::::
+::::
+
+---
+
+## Thresholding after: Probability and Distance
+
+- Models in `sklearn` can produce either: **Probability**, **Distance** or both.
+- `model.predict(X)` is the final “gate”; it uses a **threshold** for the *Positive* class:
+  - default `0.5` for probability
+  - default `0.0` for distance
+- A different threshold gives:
+  - different predictions
+  - different performance
+  - different confusion matrix
+
+## Interactive Demo
+
+[**Interactive Demo**: Classifier Threshold effect on point and summary metrics](./widget_threshold.qmd){.center}
+
+## Point Metrics Summary
+
+The following metrics are commonly used to assess the performance of classification models:
+
+| Metric | Formula | Interpretation |
+| :--- | :--- | :--- |
+| **Accuracy** | $\frac{TP + TN}{TP + TN + FP + FN}$ | Overall performance of model |
+| **Precision** | $\frac{TP}{TP + FP}$ | How accurate the positive predictions are |
+| **Recall or Sensitivity** | $\frac{TP}{TP + FN}$ | Coverage of actual positive sample |
+| **Specificity** | $\frac{TN}{TN + FP}$ | Coverage of actual negative sample |
+| **F1 score** | $\frac{2TP}{2TP + FP + FN}$ | Hybrid metric useful for unbalanced classes |
+
+::::: {.notes}
+Precision-recall trade-off is not an accident; it is controlled by the decision rule (threshold).
 ::::
 
 ## Summary Metrics: PR Curve

@@ -83,39 +83,37 @@ Lessons and labs:
 
 If you like walkthroughs, follow this [YouTube Playlist](https://www.youtube.com/playlist?list=PLgJhDSE2ZLxaY_DigHeiIDC1cD09rXgJv) which go through the exercises as well.
 
-## Module 3: Descriptive Statistics
+## Module 3: Statistical Analysis
 
-### M3-1: Statistical Analysis
+### M3-1: Univariate Analysis
 
 Learning outcomes:
 
-1. Describe what statistics is all about
-2. Identify the two types of statistics and how they work together
-3. Distinguish between Population and Sample
-4. Given a dataset, identify the numerical and categorical variables
-5. Provide more examples of numerical variables and categorical variables
-6. Describe common statistics like: *Proportion*, *Mean* an *Variance* (and calculate them).
-7. Identify at least two key elements that describe a Distribution, (and calculate them).
-8. Describe different shapes of distributions using terms like: normal/gaussian, uniform, skewed, and exponential
-9. Give at least 2 examples of normally distributed data
-10. Give at least 1 example of non-normally distributed data (e.g., exponential)
-11. Explain what a *Percentile* means in layman terms; (and calculate them).
-12. Explain what is 1, 2, and 3 standard deviations mean for a normal distribution (and calculate them)
-13. Given a box-and-whiskers plot, identify its graphical elements and tell what they mean
-15. Given a plot make general statements about the samples using words like: "most", "few"
-16. Given a general statement about a samples, verify whether it is true or not
-18. Name at least 2 outlier-removal methods and explain how they work
+1. Identify the two types of statistics
+2. Distinguish between Population and Sample
+3. Given a dataset, identify the numerical and categorical variables
+4. Show statistics like: *Proportion*, *Mean* an *Variance* (and calculate them)
+5. Identify the two two key elements that describe a Distribution, (and calculate them)
+6. Describe different shapes of distributions using terms like: normal/gaussian, uniform, skewed, and exponential
+7. Give at least 2 examples of normally distributed data
+8. Give at least 1 example of non-normally distributed data (e.g., exponential)
+9. Explain what a *Percentile* means in layman terms; (and calculate them).
+10. Explain what is 1, 2, and 3 standard deviations mean for a normal distribution (and calculate them)
+11. Given a box-and-whiskers plot, identify its graphical elements and tell what they mean
+12. Given a plot make general statements about the samples using words like: "most", "few"
+13. Given a general statement about a samples, verify whether it is true or not
+14. Name at least 2 outlier-removal methods and explain how they work
 
 Lessons:
 
 - [Lesson: Statistics](./M3/lessons/01_slides_statistics.qmd)
-- [Lab: Statistics](./M3/lessons/01_statistics.ipynb)
+- [Lab: Univariate Analysis](./M3/lessons/01_univariate.ipynb)
 
 #### Exercises
 
 1. [Exercise](./M3/exercises/m3-1_exercise.ipynb)
 
-### M3-2: Statistical Visualization
+### M3-2: Statistical Visualizations
 
 Learning outcomes:
 
@@ -136,11 +134,7 @@ Learning outcomes:
 
 Lessons and labs:
 
-1. [Python Visualization Tools](./M3/lessons/02_data_viz.ipynb)
-2. [Visualizing distributions of data](./M3/lessons/03_displot.ipynb)
-3. [Visualizing categorical data](./M3/lessons/04_catplot.ipynb)
-4. [Visualizing statistical relationships](./M3/lessons/05_relplot.ipynb)
-5. [Effective communication of exploratory results](./M3/lessons/06_effective_comm.qmd)
+1. [Data Visualization](./M3/lessons/02_data_viz.ipynb)
 
 #### Exercises
 
@@ -155,39 +149,41 @@ Learning outcomes:
 
 1. Distinguish between *Inferential* and *Descriptive* Statistics
 2. Distinguish between *Null* and *Alternative* Hypothesis
-3. Given an alternative hypothesis select the correct statistical test
-4. Intrepret the result of a statistical test (p-value)
-5. Understand that alpha (the significance level) is selected by  convention to have the value of `0.05`
-6. Distinguish between *Treatment* and *Control* Groups
-7. Given a claim in layman terms, describe it in statistical terms, as a hypothesis
-8. Given a hypothesis in statistical terms, explain it in layman terms
-9. Recognize when the test is two-sided or one-sided (and in which direction)
+3. Recognize anecdotal evidence as such
+4. Given a statement, define the null and alternative hypothesis to setup the statistical testing procedure
+5. Explain what failing to reject the null hypothesis means
+6. Given an alternative hypothesis select the correct statistical test
+7. Intrepret the result of a statistical test (p-value)
+8. Understand that alpha (the significance level) is selected by  convention to have the value of `0.05`
+9. Distinguish between *Treatment* and *Control* Groups
+10. Given a claim in layman terms, describe it in statistical terms, as a hypothesis
+11. Given a hypothesis in statistical terms, explain it in layman terms
+12. Recognize when the test is two-sided or one-sided (and in which direction)
 
 Lessons:
 
-- [Lesson: Hypothesis Testing](./M4/lessons/01_slides_hypothesis_testing.qmd)
-- [Lab: Hypothesis Testing](./M4/lessons/01_hypothesis_testing.ipynb)
+- [Lab: Hypothesis Testing](./M3/lessons/03_hypothesis_testing.ipynb)
 
 
-### M4-2: Association and Correlation
+### M4-2: Bivariate Analysis
 
 Learning outcomes:
 
-1. Distinguish between association and correlation
-2. Recognize how Chi-square test and Cramer's value are used together
-3. Interpret a Chi-square statistic
-4. Interpret a Cramér's V statistic
-5. Find the association between two categorical variables in terms of both: significance and strength
-6. Interpret an r-square statistic
-7. Given a scatter plot, choose the corresponding r-square value from a list of given values
-8. Recognize non-linearity and outlier issues with r-squared value
-9. Explain the phrase "correlation does not imply causation" and give at least 1 example of your own
-10. Explain what a *Confounding Variable* is
+1. Distinguish between correlation and association
+2. Interpret a give correlation coefficient $r$
+3. Given a correlation coefficient $r$ map it to a scatter plot
+4. Use `sns.pairplot(kind="reg")` to plot pairwise relationships in a datset
+5. Explain correlation is not causation with an example
+6. Demonstrate knowledge of how to find out if a variable may be confounding
+7. Give an example where a variable is found not to be confounding
+8. Recognize how Chi-square test and Cramer's value are used together
+9. Find the association between two categorical variables in terms of both: significance and strength
+10. Use `histplot(discrete=True)` to plot proportions of categroical variables
+11. Calculate the contingency table and plot the heatmap
 
 Lessons:
 
-- [Lab 1: Categorical Association](./M4/lessons/02_cat_association.ipynb)
-- [Lab 2: Numerical Correlation](./M4/lessons/03_num_correlation.ipynb)
+- [Lab: Bivariate Analysis](./M3/lessons/04_bivariate.ipynb)
 
 #### Exercises
 
@@ -196,13 +192,13 @@ Lessons:
 
 ## Projects
 
-You will do all three projects, but only 1 will be presented:
+All three projects are required, but only one will be selected to present:
 
 - [Project 1: Fast Food Marketing Campaign A/B Test](./Project/p1/p1_fast_food.qmd)
 - [Project 2: Student Exam Performance Factors](./Project/p2/p2_student_exam.qmd)
 - [Project 3: Global Mental Health Crisis Index 2026](./Project/p3/p3_GMHCI-2026.qmd)
 
----
+See [Project Notebook Presentation](./Project/presentation.qmd).
 
 ## References
 
